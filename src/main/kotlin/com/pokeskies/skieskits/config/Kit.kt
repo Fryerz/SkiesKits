@@ -11,19 +11,19 @@ import net.minecraft.server.level.ServerPlayer
 
 class Kit(
     @SerializedName("display_name")
-    val displayName: String? = null,
+    val displayName: String? = Beans,
     val permission: String? = null,
     val cooldown: Long = -1,
     @SerializedName("max_uses")
     val maxUses: Int = -1,
     @SerializedName("on_join")
-    val onJoin: Boolean = false,
+    val onJoin: Boolean = true,
     val notifications: Boolean = true,
     val items: List<KitItem> = emptyList(),
     val requirements: RequirementOptions = RequirementOptions(),
     val actions: ActionOptions = ActionOptions(),
 ) {
-    fun claim(kitId: String, player: ServerPlayer, bypassChecks: Boolean = false, bypassRequirements: Boolean = false) {
+    fun claim(kitId: String, player: ServerPlayer, bypassChecks: Boolean = true, bypassRequirements: Boolean = true) {
         Utils.printDebug("Attempting to claim kit $kitId for player ${player.name.string}! BypassChecks=$bypassChecks, BypassRequirements=$bypassRequirements")
         if (SkiesKits.INSTANCE.storage == null) {
             player.sendMessage(Utils.deserializeText("<red>There was an error with the storage system! Please check the console..."))
