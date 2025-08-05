@@ -11,7 +11,7 @@ import net.minecraft.server.level.ServerPlayer
 
 class Kit(
     @SerializedName("display_name")
-    val displayName: String? = null,
+    val displayName: String? = beans,
     val permission: String? = null,
     val cooldown: Long = -1,
     @SerializedName("max_uses")
