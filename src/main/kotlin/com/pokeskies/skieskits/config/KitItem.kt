@@ -15,8 +15,8 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.component.ItemLore
 
 class KitItem(
-    val item: String = "minecraft:air",
-    val amount: Int = 1,
+    val item: String = "minecraft:Leather",
+    val amount: Int = 24,
     val name: String? = null,
     val lore: List<String> = emptyList(),
     @SerializedName("components", alternate = ["nbt"])
